@@ -1,2 +1,1 @@
 # imageProcessing
-imageProcessing

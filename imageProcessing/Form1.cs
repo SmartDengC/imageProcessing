@@ -153,15 +153,14 @@ namespace imageProcessing
         {            
             if (thresholdingImage != null)
             {
+                
+                xtxlpImage = thresholdingImage;          
+                //定义一个结构元素：aaa这个参数十分重要
+                Mat aaa = CvInvoke.GetStructuringElement(Emgu.CV.CvEnum.ElementShape.Rectangle, new Size(5, 5), new Point(2, 2));
                 //开运算
-                xtxlpImage = thresholdingImage;
-                //用这个函数有问题，没有解决
-                //xtxlpImage._MorphologyEx(MorphOp.Erode, xtxlpImage, new Point(-1, -1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0, 0, 0));
-                //没看到什么效果
-                xtxlpImage.Erode(1);//开
-                xtxlpImage.Dilate(1);//闭
+                xtxlpImage._MorphologyEx(MorphOp.Erode, aaa, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));              
                 //闭运算
-                //xtxlpImage._MorphologyEx(MorphOp.Close, xtxlpImage, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(255, 0, 0, 255));
+                xtxlpImage._MorphologyEx(MorphOp.Close, xtxlpImage, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(255, 0, 0, 255));
                 imageBox5.Image = xtxlpImage;
             }
             else

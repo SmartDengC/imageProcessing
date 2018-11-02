@@ -158,9 +158,9 @@ namespace imageProcessing
                 //定义一个结构元素：aaa这个参数十分重要
                 Mat aaa = CvInvoke.GetStructuringElement(Emgu.CV.CvEnum.ElementShape.Rectangle, new Size(5, 5), new Point(2, 2));
                 //开运算
-                xtxlpImage._MorphologyEx(MorphOp.Erode, aaa, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));              
+                xtxlpImage._MorphologyEx(MorphOp.Open, aaa, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));              
                 //闭运算
-                xtxlpImage._MorphologyEx(MorphOp.Close, xtxlpImage, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(255, 0, 0, 255));
+               xtxlpImage._MorphologyEx(MorphOp.Close, aaa, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));
                 imageBox5.Image = xtxlpImage;
             }
             else

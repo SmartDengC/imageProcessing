@@ -50,6 +50,10 @@ namespace imageProcessing
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.imageBox6 = new Emgu.CV.UI.ImageBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.imageBox7 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.SourceImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
@@ -57,6 +61,8 @@ namespace imageProcessing
             ((System.ComponentModel.ISupportInitialize)(this.imageEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -167,7 +173,7 @@ namespace imageProcessing
             // imageEnd
             // 
             this.imageEnd.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.imageEnd.Location = new System.Drawing.Point(105, 4049);
+            this.imageEnd.Location = new System.Drawing.Point(105, 6350);
             this.imageEnd.Name = "imageEnd";
             this.imageEnd.Size = new System.Drawing.Size(500, 500);
             this.imageEnd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -240,12 +246,55 @@ namespace imageProcessing
             this.textBox1.TabIndex = 24;
             this.textBox1.Text = "1";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(111, 3597);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(131, 30);
+            this.button7.TabIndex = 25;
+            this.button7.Text = "距离变换";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // imageBox6
+            // 
+            this.imageBox6.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.imageBox6.Location = new System.Drawing.Point(111, 3653);
+            this.imageBox6.Name = "imageBox6";
+            this.imageBox6.Size = new System.Drawing.Size(500, 500);
+            this.imageBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox6.TabIndex = 26;
+            this.imageBox6.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(111, 4182);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(131, 30);
+            this.button8.TabIndex = 27;
+            this.button8.Text = "分水岭";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // imageBox7
+            // 
+            this.imageBox7.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.imageBox7.Location = new System.Drawing.Point(111, 4248);
+            this.imageBox7.Name = "imageBox7";
+            this.imageBox7.Size = new System.Drawing.Size(500, 500);
+            this.imageBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox7.TabIndex = 28;
+            this.imageBox7.TabStop = false;
+            // 
             // imageProcessing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1419, 659);
+            this.Controls.Add(this.imageBox7);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.imageBox6);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -276,6 +325,8 @@ namespace imageProcessing
             ((System.ComponentModel.ISupportInitialize)(this.imageEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +353,10 @@ namespace imageProcessing
         private Label label2;
         private Label label3;
         private TextBox textBox1;
+        private Button button7;
+        private Emgu.CV.UI.ImageBox imageBox6;
+        private Button button8;
+        private Emgu.CV.UI.ImageBox imageBox7;
     }
 }
 

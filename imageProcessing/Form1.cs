@@ -16,7 +16,8 @@ namespace imageProcessing
         Image<Gray, Byte> thresholdingImage = null;      //二值化
         Image<Gray, Byte> kdtcImage = null;              //空洞填充
         Image<Gray, Byte>  xtxlpImage =null;             //形态学滤波
-
+        Image<Gray, Single> jlbhImage = null;             //距离变换
+        Image<Gray, Byte> fslImage = null;             //分水岭
 
 
         private void imageProcessing_Load(object sender, EventArgs e)
@@ -169,6 +170,36 @@ namespace imageProcessing
             }
 
 
+        }
+        /// <summary>
+        /// 距离变换
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (xtxlpImage != null)
+            {
+                // jlbhImage = xtxlpImage;
+
+                jlbhImage = new Image<Gray, Single>(xtxlpImage.Width, xtxlpImage.Height);
+                // jlbhImage = xtxlpImage.Convert<Gray, Single>();
+                // jlbhImage = new Image<Gray, float>(xtxlpImage.Width, xtxlpImage.Height);    
+
+                CvInvoke.DistanceTransform(xtxlpImage, jlbhImage, null, Emgu.CV.CvEnum.DistType.L1, 5, Emgu.CV.CvEnum.DistLabelType.CComp);
+
+                //再二值化()
+                // Image<Gray, byte> aa=new Image<Gray, byte>(jlbhImage.Width, jlbhImage.Height);
+                //// aa = jlbhImage.Convert<Gray, byte>();
+                //// aa = aa.CopyBlank();
+                // CvInvoke.Threshold(jlbhImage, aa, 0, 255, ThresholdType.Otsu);
+                imageBox6.Image = jlbhImage;
+
+            }
+            else
+            {
+                MessageBox.Show("请先完成上一步！");
+            }
         }
     }
 }

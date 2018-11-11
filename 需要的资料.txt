@@ -3,3 +3,6 @@
 
 距离变换函数：DistanceTransform()
 它的API文档：http://www.emgu.com/wiki/files/3.4.3/document/html/5c6795bf-9740-d5d0-2607-1d786a56ddbd.htm
+
+测试版本 VS2017
+Engucv版本：3.43（使用VS自带的NuGet获取的）

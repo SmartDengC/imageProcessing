@@ -166,3 +166,4 @@ E:\Data Git\项目克隆代码仓库\imageProcessing\imageProcessing\obj\Debug\i
 E:\Data Git\项目克隆代码仓库\imageProcessing\imageProcessing\obj\Debug\imageProcessing.csproj.CopyComplete
 E:\Data Git\项目克隆代码仓库\imageProcessing\imageProcessing\obj\Debug\imageProcessing.exe
 E:\Data Git\项目克隆代码仓库\imageProcessing\imageProcessing\obj\Debug\imageProcessing.pdb
+D:\Git Library\imageProcessing\imageProcessing\obj\Debug\imageProcessing.testForm.resources

@@ -206,9 +206,9 @@ namespace imageProcessing
 
 
                 //再形态学处理
-                Mat aaa = CvInvoke.GetStructuringElement(Emgu.CV.CvEnum.ElementShape.Rectangle, new Size(5, 5), new Point(2, 2));
+                Mat aaa = CvInvoke.GetStructuringElement(Emgu.CV.CvEnum.ElementShape.Ellipse, new Size(5, 5), new Point(-1, -1));
                 //开运算
-                bb._MorphologyEx(MorphOp.Open, aaa, new Point(1, 1), 6, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));
+                bb._MorphologyEx(MorphOp.Open, aaa, new Point(1, 1), 7, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));
                 //闭运算
                 bb._MorphologyEx(MorphOp.Close, aaa, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));
 

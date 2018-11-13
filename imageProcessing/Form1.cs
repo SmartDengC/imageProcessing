@@ -120,6 +120,7 @@ namespace imageProcessing
             {
                 thresholdingImage = filterImage.CopyBlank();
                 CvInvoke.Threshold(filterImage, thresholdingImage, 0,255, ThresholdType.Otsu);//中间几个参数的意思没搞清楚，其影响也不知道。
+                thresholdingImage = thresholdingImage.Not();
                 imageBox3.Image = thresholdingImage;
             }
             else
@@ -172,7 +173,7 @@ namespace imageProcessing
 
         }
         /// <summary>
-        /// 距离变换
+        /// 距离变换,二值化，形态学
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -186,14 +187,32 @@ namespace imageProcessing
                 // jlbhImage = xtxlpImage.Convert<Gray, Single>();
                 // jlbhImage = new Image<Gray, float>(xtxlpImage.Width, xtxlpImage.Height);    
 
-                CvInvoke.DistanceTransform(xtxlpImage, jlbhImage, null, Emgu.CV.CvEnum.DistType.L1, 5, Emgu.CV.CvEnum.DistLabelType.CComp);
+                CvInvoke.DistanceTransform(xtxlpImage, jlbhImage, null, Emgu.CV.CvEnum.DistType.L1, 3, Emgu.CV.CvEnum.DistLabelType.CComp);
+                for (int i = 0; i < jlbhImage.Height; i++)
+                {
+                    for (int j = 0; j < jlbhImage.Width; j++)
+                    {
+                        //jlbhImage.Data[i, j, 0] = Convert.ToByte(255 - jlbhImage.Data[i, j, 0]);
+                        jlbhImage.Data[i, j, 0] = jlbhImage.Data[i, j, 0] * 10;
+                    }
+                }
 
                 //再二值化()
-                // Image<Gray, byte> aa=new Image<Gray, byte>(jlbhImage.Width, jlbhImage.Height);
-                //// aa = jlbhImage.Convert<Gray, byte>();
-                //// aa = aa.CopyBlank();
-                // CvInvoke.Threshold(jlbhImage, aa, 0, 255, ThresholdType.Otsu);
-                imageBox6.Image = jlbhImage;
+                Image<Gray, byte> aa, bb;
+                //aa = jlbhImage.CopyBlank();
+                aa = jlbhImage.Convert<Gray, byte>();
+                bb = aa.CopyBlank();
+                CvInvoke.Threshold(aa, bb, 0, 255, ThresholdType.Otsu);
+
+
+                //再形态学处理
+                Mat aaa = CvInvoke.GetStructuringElement(Emgu.CV.CvEnum.ElementShape.Rectangle, new Size(5, 5), new Point(2, 2));
+                //开运算
+                bb._MorphologyEx(MorphOp.Open, aaa, new Point(1, 1), 6, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));
+                //闭运算
+                bb._MorphologyEx(MorphOp.Close, aaa, new Point(1, 1), 1, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar(0));
+
+                imageBox6.Image = bb;
 
             }
             else

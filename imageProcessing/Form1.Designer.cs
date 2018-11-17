@@ -54,6 +54,7 @@ namespace imageProcessing
             this.imageBox6 = new Emgu.CV.UI.ImageBox();
             this.button8 = new System.Windows.Forms.Button();
             this.imageBox7 = new Emgu.CV.UI.ImageBox();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SourceImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
@@ -274,6 +275,7 @@ namespace imageProcessing
             this.button8.TabIndex = 27;
             this.button8.Text = "分水岭";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // imageBox7
             // 
@@ -285,12 +287,23 @@ namespace imageProcessing
             this.imageBox7.TabIndex = 28;
             this.imageBox7.TabStop = false;
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(111, 43);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(121, 30);
+            this.button9.TabIndex = 29;
+            this.button9.Text = "运行所有步骤";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // imageProcessing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1419, 659);
+            this.ClientSize = new System.Drawing.Size(1597, 708);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.imageBox7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.imageBox6);
@@ -357,6 +370,7 @@ namespace imageProcessing
         private Emgu.CV.UI.ImageBox imageBox6;
         private Button button8;
         private Emgu.CV.UI.ImageBox imageBox7;
+        private Button button9;
     }
 }
 

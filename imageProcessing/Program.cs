@@ -14,8 +14,8 @@ namespace imageProcessing
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);                    
             Application.Run(new imageProcessing());
-            //Application.Run(new testForm());
-            
+            // Application.Run(new testForm());
+
         }
     }
 }

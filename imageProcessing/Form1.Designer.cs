@@ -55,6 +55,9 @@ namespace imageProcessing
             this.button8 = new System.Windows.Forms.Button();
             this.imageBox7 = new Emgu.CV.UI.ImageBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.imageBox8 = new Emgu.CV.UI.ImageBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SourceImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
@@ -64,6 +67,7 @@ namespace imageProcessing
             ((System.ComponentModel.ISupportInitialize)(this.imageBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -297,12 +301,43 @@ namespace imageProcessing
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // imageBox8
+            // 
+            this.imageBox8.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.imageBox8.Location = new System.Drawing.Point(111, 4835);
+            this.imageBox8.Name = "imageBox8";
+            this.imageBox8.Size = new System.Drawing.Size(500, 500);
+            this.imageBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox8.TabIndex = 30;
+            this.imageBox8.TabStop = false;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(111, 4778);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(131, 30);
+            this.button10.TabIndex = 31;
+            this.button10.Text = "计数";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(276, 4793);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 15);
+            this.label4.TabIndex = 32;
+            // 
             // imageProcessing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1597, 708);
+            this.ClientSize = new System.Drawing.Size(1455, 708);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.imageBox8);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.imageBox7);
             this.Controls.Add(this.button8);
@@ -340,6 +375,7 @@ namespace imageProcessing
             ((System.ComponentModel.ISupportInitialize)(this.imageBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +407,9 @@ namespace imageProcessing
         private Button button8;
         private Emgu.CV.UI.ImageBox imageBox7;
         private Button button9;
+        private Emgu.CV.UI.ImageBox imageBox8;
+        private Button button10;
+        private Label label4;
     }
 }
 
